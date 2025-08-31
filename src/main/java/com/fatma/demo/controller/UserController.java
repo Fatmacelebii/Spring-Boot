@@ -1,5 +1,7 @@
 package com.fatma.demo.controller;
 
+import com.fatma.demo.dto.request.UserRequest;
+import com.fatma.demo.dto.response.UserResponse;
 import com.fatma.demo.model.User;
 import com.fatma.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public User createUser (@RequestBody User user){
-        return userService.createUser(user);
+    public UserResponse createUser (@RequestBody UserRequest request){
+        return userService.createUser(request);
     }
 }
