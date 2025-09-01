@@ -1,5 +1,6 @@
 package com.fatma.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Book {
     private String author;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "student_id")  // foreign key
+    @JoinColumn(name = "student_id")
+    @JsonBackReference// foreign key
     private Student student;
 }
