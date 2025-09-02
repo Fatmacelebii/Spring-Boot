@@ -48,4 +48,11 @@ public class EmployeeService {
         return employeeRepository.findByDepartment(department);
     }
 
+    public List<Employee> getEmployeesWithSalaryGreaterThan(Double amount) {
+        return employeeRepository.findEmployeesWithSalaryGreaterThan(amount);
+    }
+
+    public List<Employee> getEmployeesByDepartmentNative(String dept) {
+        return employeeRepository.findEmployeesByDepartmentNative(dept);
+    }
 }

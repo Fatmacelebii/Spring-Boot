@@ -44,4 +44,14 @@ public class EmployeeController {
         return employeeService.getByDepartment(department);
     }
 
+    @GetMapping("/salaryGreaterThan/{amount}")
+    public List<Employee> getEmployeesWithSalaryGreaterThan(@PathVariable Double amount) {
+        return employeeService.getEmployeesWithSalaryGreaterThan(amount);
+    }
+
+    @GetMapping("/native/department/{dept}")
+    public List<Employee> getEmployeesByDepartmentNative(@PathVariable String dept) {
+        return employeeService.getEmployeesByDepartmentNative(dept);
+    }
+
 }
